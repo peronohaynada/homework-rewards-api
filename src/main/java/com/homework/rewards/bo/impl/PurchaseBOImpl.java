@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import com.homework.rewards.bo.PurchaseBO;
 import com.homework.rewards.dao.PurchaseRepository;
@@ -28,11 +29,14 @@ public class PurchaseBOImpl implements PurchaseBO {
 
 	@Override
 	public Optional<Purchase> findById(String purchaseId) {
+		Assert.notNull(purchaseId, "The transaction id cannot be null");
 		return purchaseRepository.findById(purchaseId);
 	}
 	
 	@Override
 	public Purchase create(final PurchaseDTO purchaseDTO) {
+		Assert.notNull(purchaseDTO, "Purchase cannot be null");
+		
 		final Integer points = calculatePoints(purchaseDTO.getTotalSpent());
 		LOGGER.info("A total of {} points calculated from the total purchase of {} for the user {}", points,
 				purchaseDTO.getTotalSpent(), purchaseDTO.getCustomerId());
@@ -44,8 +48,9 @@ public class PurchaseBOImpl implements PurchaseBO {
 
 	@Override
 	public Optional<Purchase> update(PurchaseDTO purchaseDTO) {
+		Assert.notNull(purchaseDTO, "Purchase cannot be null");
 		Optional<Purchase> optional = purchaseRepository.findById(purchaseDTO.getTransactionId());
-
+		
 		if (!optional.isPresent()) {
 			return optional;
 		}
@@ -59,6 +64,7 @@ public class PurchaseBOImpl implements PurchaseBO {
 
 	@Override
 	public boolean delete(final String transactionId) {
+		Assert.notNull(transactionId, "The transaction id cannot be null");
 		if (!purchaseRepository.existsById(transactionId)) {
 			return false;
 		}
