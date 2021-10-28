@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "6179e6295d79044408091dc3"
+  },
+  "totalSpent": 170,
+  "generatedPoints": 190,
+  "customerId": "123",
+  "timestamp": 1632796774000,
+  "_class": "com.homework.rewards.model.Purchase"
+},{
+  "_id": {
+    "$oid": "6179e65f5d79044408091dc4"
+  },
+  "totalSpent": 300,
+  "generatedPoints": 450,
+  "customerId": "123",
+  "timestamp": 1630118374000,
+  "_class": "com.homework.rewards.model.Purchase"
+},{
+  "_id": {
+    "$oid": "6179e6835d79044408091dc5"
+  },
+  "totalSpent": 150,
+  "generatedPoints": 150,
+  "customerId": "123",
+  "timestamp": 1622169574000,
+  "_class": "com.homework.rewards.model.Purchase"
+},{
+  "_id": {
+    "$oid": "6179ed950497a1631a6cc330"
+  },
+  "totalSpent": 150,
+  "generatedPoints": 150,
+  "customerId": "456",
+  "timestamp": 1619577574000,
+  "_class": "com.homework.rewards.model.Purchase"
+},{
+  "_id": {
+    "$oid": "6179edb80497a1631a6cc331"
+  },
+  "totalSpent": 50,
+  "generatedPoints": 0,
+  "customerId": "456",
+  "timestamp": 1632796774000,
+  "_class": "com.homework.rewards.model.Purchase"
+},{
+  "_id": {
+    "$oid": "6179edca0497a1631a6cc332"
+  },
+  "totalSpent": 600,
+  "generatedPoints": 1050,
+  "customerId": "456",
+  "timestamp": 1632883174000,
+  "_class": "com.homework.rewards.model.Purchase"
+}]
