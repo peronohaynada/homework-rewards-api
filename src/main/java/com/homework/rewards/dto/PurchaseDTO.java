@@ -7,17 +7,20 @@ public class PurchaseDTO {
 
 	private final String transactionId;
 	private final Float totalSpent;
-	private final String userId;
+	private final String customerId;
+	private final Long timestamp;
 
 	@JsonCreator
 	public PurchaseDTO(
 			@JsonProperty("transactionId") final String transactionId,
 			@JsonProperty("totalSpent") final Float totalSpent,
-			@JsonProperty("userId") final String userId) {
+			@JsonProperty("customerId") final String customerId,
+			@JsonProperty("timestamp") final Long timestamp) {
 
 		this.transactionId = transactionId;
 		this.totalSpent = totalSpent;
-		this.userId = userId;
+		this.customerId = customerId;
+		this.timestamp = timestamp;
 	}
 
 	public String getTransactionId() {
@@ -28,8 +31,12 @@ public class PurchaseDTO {
 		return totalSpent;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public Long getTimestamp() {
+		return timestamp;
 	}
 
 }

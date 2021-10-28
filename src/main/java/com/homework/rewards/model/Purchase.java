@@ -10,18 +10,21 @@ public class Purchase {
 	private final String transactionId;
 	private final Float totalSpent;
 	private final Integer generatedPoints;
-	private final String userId;
+	private final String customerId;
+	private final Long timestamp;
 
 	@BsonCreator
 	public Purchase(@BsonProperty("transactionId") final String transactionId,
 			@BsonProperty("totalSpent") final Float totalSpent,
 			@BsonProperty("generatedPoints") final Integer generatedPoints,
-			@BsonProperty("userId") final String userId) {
+			@BsonProperty("customerId") final String customerId,
+			@BsonProperty("timestamp") final Long timestamp) {
 
 		this.transactionId = transactionId;
 		this.totalSpent = totalSpent;
 		this.generatedPoints = generatedPoints;
-		this.userId = userId;
+		this.customerId = customerId;
+		this.timestamp = timestamp;
 	}
 
 	public String getTransactionId() {
@@ -36,8 +39,12 @@ public class Purchase {
 		return generatedPoints;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public Long getTimestamp() {
+		return timestamp;
 	}
 
 }
